@@ -72,6 +72,8 @@ namespace Pong
             if (ball.Bottom >= playground.Bottom)
             {
                 timer1.Enabled = false; //Ball is out -> Stop the game
+                label1.Show();
+                label2.Show();
             }
         }
 
@@ -81,6 +83,12 @@ namespace Pong
             {
                 this.Close();
             }
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            label1.Hide();
+            label2.Hide();
         }
     }
 }
