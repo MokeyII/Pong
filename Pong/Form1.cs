@@ -44,6 +44,12 @@ namespace Pong
                 speed_left += 2;
                 speed_top = -speed_top; // Change direction
                 point += 1;
+                Random randomGen = new Random();
+                KnownColor[] name = (KnownColor[])Enum.GetValues(typeof(KnownColor));
+                KnownColor randomColorName = name[randomGen.Next(name.Length)];
+                Color randomColor = Color.FromKnownColor(randomColorName);
+                ball.BackColor = randomColor;
+                racket.BackColor = randomColor;
             }
 
             if(ball.Left <= playground.Left)
@@ -57,6 +63,11 @@ namespace Pong
             if(ball.Top <= playground.Top)
             {
                 speed_top = -speed_top;
+                Random randomGen = new Random();
+                KnownColor[] name = (KnownColor[])Enum.GetValues(typeof(KnownColor));
+                KnownColor randomColorName = name[randomGen.Next(name.Length)];
+                Color randomColor = Color.FromKnownColor(randomColorName);
+                playground.BackColor = randomColor;
             }
             if (ball.Bottom >= playground.Bottom)
             {
