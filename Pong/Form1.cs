@@ -50,6 +50,8 @@ namespace Pong
                 Color randomColor = Color.FromKnownColor(randomColorName);
                 ball.BackColor = randomColor;
                 racket.BackColor = randomColor;
+                txtPointCounter.Text = point.ToString();
+                txtPointCounter.ForeColor = randomColor;
             }
 
             if(ball.Left <= playground.Left)
@@ -68,12 +70,21 @@ namespace Pong
                 KnownColor randomColorName = name[randomGen.Next(name.Length)];
                 Color randomColor = Color.FromKnownColor(randomColorName);
                 playground.BackColor = randomColor;
+                txtPointCounter.BackColor = randomColor;
             }
             if (ball.Bottom >= playground.Bottom)
             {
                 timer1.Enabled = false; //Ball is out -> Stop the game
                 label1.Show();
                 label2.Show();
+                lblGamePoints.Show();
+                lblEndGamePoints.Show();
+                txtEndGamePoints.Show();
+                txtEndGamePoints.Text = txtPointCounter.Text;
+                txtPointCounter.Hide();
+                lblGamePoints.Hide();
+
+
             }
         }
 
@@ -89,6 +100,8 @@ namespace Pong
         {
             label1.Hide();
             label2.Hide();
+            lblEndGamePoints.Hide();
+            txtEndGamePoints.Hide();
         }
     }
 }
