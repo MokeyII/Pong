@@ -13,9 +13,9 @@ namespace Pong
     public partial class MainWindow : Form
     {
 
-        public int speed_left = 4;
-        public int speed_top = 4;
-        public int point = 0;
+        private int speed_left = 4;
+        private int speed_top = 4;
+        private int point = 0;
         public MainWindow()
         {
             InitializeComponent();
